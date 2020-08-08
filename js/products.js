@@ -18,7 +18,7 @@ function showCategoriesList(array) {
                         <h4>` + category.name + `</h4>
                         <p>` + category.description + `</p>
                         </div>
-                        <small class="text-muted">` + category.productCount + ` artículos</small>
+                        <small class="text-muted">` + category.soldCount + ` artículos</small>
                     </div>
                 </div>
             </div>
