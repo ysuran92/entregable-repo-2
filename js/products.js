@@ -25,7 +25,7 @@ function showProductsList(array) {
         </div>
         `
 
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+        document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
 }
 
