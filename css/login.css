@@ -43,25 +43,6 @@ form {
     margin: 10px;
 }
 
-.oauth-container {
-    margin-top: 15px;
-    width: 75%;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    height: 3rem;
-}
-
-#googleIMG {
-    float: left;
-    padding: 0%;
-    margin-top: 5px;
-    margin-left: -3px;
-    margin-right: 5px;
-}
-
-.mainDivBtn {
-    height: 2rem;
-}
-
 #googleP {
     margin-top: 0.15rem;
 }
