@@ -1,0 +1,67 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-control:hover::after {
+    content: attr(title);
+}
+
+#inputPassword {
+    margin: 10px;
+}
+
+#inputEmail {
+    margin: 10px;
+}
+
+.invalid-feedback {
+    margin: 10px;
+}
+
+.oauth-container {
+    margin-top: 15px;
+    width: 75%;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    height: 3rem;
+}
+
+#googleIMG {
+    float: left;
+    padding: 0%;
+    margin-top: 5px;
+    margin-left: -3px;
+    margin-right: 5px;
+}
+
+.mainDivBtn {
+    height: 2rem;
+}
+
+#googleP {
+    margin-top: 0.15rem;
+}
