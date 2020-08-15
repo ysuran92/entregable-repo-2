@@ -44,5 +44,7 @@ form {
 }
 
 #googleP {
-    margin-top: 0.15rem;
+    margin-top: 0.4rem;
+    width: 100%;
+    max-width: 330px;
 }
