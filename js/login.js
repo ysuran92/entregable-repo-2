@@ -11,6 +11,7 @@ function onFailure(error) {
     console.log(error);
 }
 
+
 function renderButton() {
     gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
