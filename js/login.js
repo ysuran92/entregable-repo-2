@@ -36,10 +36,6 @@ function attachSignin(element) {
         });
 }
 
-document.addEventListener("DOMContentLoaded", function(e) {
-
-});
-
 (function() {
     'use strict';
     window.addEventListener('load', function() {
@@ -55,3 +51,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
         });
     }, false);
 })();
+
+//
+document.addEventListener("DOMContentLoaded", function(e) {
+
+});
+//
