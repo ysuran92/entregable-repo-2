@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -11,6 +11,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -24,15 +25,20 @@
             <img class="mb-4" src="img/login.png" alt="" width="100%" />
             <h1 class="h3 mb-3 font-weight-normal">Por favor, ingrese</h1>
             <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" id="inputEmail" class="form-control" title="Ingrese su dirección de correo electrónico" placeholder="Email" required autofocus oninvalid="this.setCustomValidity('Por favor ingrese un Email válido')" oninput="setCustomValidity('')"
-            />
-            <div class="invalid-feedback">
-                Por favor ingrese su dirección de email.
+            <div class="input-group">
+                <input type="email" id="inputEmail" class="form-control" title="Ingrese su dirección de correo electrónico" placeholder="Email" required autofocus oninvalid="this.setCustomValidity('Por favor ingrese un Email válido')" oninput="setCustomValidity('')"
+                />
+                <div class="invalid-feedback">
+                    Por favor ingrese su dirección de email.
+                </div>
             </div>
-            <label for="inputPassword" class="sr-only">Contraseña</label>
-            <input type="password" id="inputPassword" title="Ingrese su contraseña" class="form-control" placeholder="Contraseña" required/>
-            <div class="invalid-feedback">
-                Por favor ingrese su contraseña.
+            <label for="validationCustomUsername" class="sr-only">Contraseña</label>
+            <div class="input-group">
+                <input type="password" id="validationCustomUsername" title="Ingrese su contraseña" class="form-control" placeholder="Contraseña" required/>
+
+                <div class="invalid-feedback">
+                    Por favor ingrese su contraseña.
+                </div>
             </div>
             <div class="checkbox mb-3">
                 <label>
@@ -42,29 +48,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">
           Ingresar
         </button>
-            <div id="googleP" class="g-signin2" data-onsuccess="onSignIn">
-                Ingresar con Google</div>
-            <script>
-                function onSuccess(googleUser) {
-                    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-                }
-
-                function onFailure(error) {
-                    console.log(error);
-                }
-
-                function renderButton() {
-                    gapi.signin2.render('my-signin2', {
-                        'scope': 'profile email',
-                        'width': 240,
-                        'height': 50,
-                        'longtitle': true,
-                        'theme': 'dark',
-                        'onsuccess': onSuccess,
-                        'onfailure': onFailure
-                    });
-                }
-            </script>
+            <div id="my-signin2" class="g-signin2" title="Ingresar con Google"></div>
 
             <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
         </div>
@@ -72,7 +56,9 @@
 
     <script src="js/init.js"></script>
     <script src="js/login.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+
 </body>
 
 </html>

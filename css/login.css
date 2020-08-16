@@ -31,19 +31,25 @@ form {
     content: attr(title);
 }
 
-#inputPassword {
-    margin: 10px;
+#validationCustomUsername {
+    border-radius: 0.15rem;
+}
+
+.input-group {
+    width: 100%;
 }
 
 #inputEmail {
-    margin: 10px;
+    padding-bottom: 10px;
+    border-radius: 0.15rem;
+    width: 330px;
 }
 
 .invalid-feedback {
     margin: 10px;
 }
 
-#googleP {
+#my-signin2 {
     margin-top: 0.4rem;
 }
 
@@ -53,4 +59,8 @@ form {
 
 .g-signin2>div {
     margin: 0 auto;
+}
+
+.checkbox {
+    padding-top: 10px;
 }
