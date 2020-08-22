@@ -13,6 +13,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/products.css">
     <link rel="icon" href="img/circle.png">
 </head>
 
@@ -33,6 +34,7 @@
                 <div class="row">
                     <div class="col text-right">
                         <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                            <p id="ordenar">Ordenar</p>
                             <label class="btn btn-light active" id="sortAsc">
                                 <input type="radio" name="options" autocomplete="off" checked>A-Z
                             </label>
@@ -43,18 +45,18 @@
                     </div>
                 </div>
                 <div class="col">
-                    <p class="font-weight-normal text-right my-2">Precio</p>
+                    <p class="font-weight-normal text-right my-2" id="precio">Precio</p>
                 </div>
-                <div class="col">
-                    <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                <div class="col" id="minInput">
+                    <input class="form-control" type="number" placeholder="mín." id="rangeFilterCountMin">
                 </div>
-                <div class="col">
+                <div class="col" id="maxInput">
                     <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
                 </div>
                 <div class="col-3 p-0">
                     <div class="btn-group" role="group">
-                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                        <button class="btn btn-light" id="rangeFilterCount">Filtrar</button>
+                        <button class="btn btn-light" id="clearRangeFilter">Limpiar</button>
                     </div>
                 </div>
             </div>
