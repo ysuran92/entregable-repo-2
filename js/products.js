@@ -1,14 +1,35 @@
 var productsArray = [];
+const ORDER_ASC_BY_NAME = "AZ";
+const ORDER_DESC_BY_NAME = "ZA";
 var minCount = undefined;
 var maxCount = undefined;
 var currentProductsArray = [];
 var currentSortCriteria = undefined;
 
+function sortProducts(criteria, array) {
+    let result = [];
+    if (criteria === ORDER_ASC_BY_NAME) {
+        result = array.sort(function(a, b) {
+            if (a.name < b.name) { return -1; }
+            if (a.name > b.name) { return 1; }
+            return 0;
+        });
+    } else if (criteria === ORDER_DESC_BY_NAME) {
+        result = array.sort(function(a, b) {
+            if (a.name > b.name) { return -1; }
+            if (a.name < b.name) { return 1; }
+            return 0;
+        });
+    }
+    return result;
+}
+
+
 function showProductsList(array) {
 
     let htmlContentToAppend = "";
-    for (let i = 0; i < array.length; i++) {
-        let product = array[i];
+    for (let i = 0; i < currentProductsArray.length; i++) {
+        let product = currentProductsArray[i];
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
@@ -56,11 +77,18 @@ function sortAndShowProducts(sortCriteria, productsArray) {
 document.addEventListener("DOMContentLoaded", function(e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
-            productsArray = resultObj.data;
-            //Muestro los productos ordenados
-            showProductsList(productsArray);
+            sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
-    })
+    });
+
+    document.getElementById("sortAsc").addEventListener("click", function() {
+        sortAndShowProducts(ORDER_ASC_BY_NAME);
+    });
+
+    document.getElementById("sortDesc").addEventListener("click", function() {
+        sortAndShowProducts(ORDER_DESC_BY_NAME);
+    });
+
     document.getElementById("clearRangeFilter").addEventListener("click", function() {
         document.getElementById("rangeFilterCountMin").value = "";
         document.getElementById("rangeFilterCountMax").value = "";
