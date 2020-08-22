@@ -52,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
     if (userLogged) {
         userLogged = JSON.parse(userLogged)
         user.innerText = user.innerHTML + "Usuario: " + userLogged.email;
-        infoUser.style = "display: inline-block";
+        infoUser.style = "display: block";
     }
+
+    document.getElementById("salir").addEventListener("click", function() {
+        localStorage.removeItem("User-Logged");
+    })
 });

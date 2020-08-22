@@ -2,7 +2,7 @@
     color: white;
 }
 
-#signOutBtn {
+#salir {
     color: #0087F7;
 }
 
@@ -68,7 +68,10 @@ footer p {
 .site-header a {
     color: white;
     transition: ease-in-out color .15s;
-    height: 2.8rem;
+}
+
+.site-header {
+    height: 3.25rem;
 }
 
 .light-text {
