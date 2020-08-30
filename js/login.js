@@ -58,21 +58,33 @@ document.addEventListener("DOMContentLoaded", function(e) {
         let inputEmail = document.getElementById("inputEmail");
         let validationCustomUsername = document.getElementById("validationCustomUsername");
         let camposCompletos = true;
+        let invalidEmail = document.getElementById("invalidEmail");
+        let invalidPass = document.getElementById("invalidPass");
 
         if (inputEmail.value === '') {
             inputEmail.classList.add("invalid");
             camposCompletos = false;
+            invalidEmail.style.display = "block";
+        }
+
+        if (!(inputEmail.value === '')) {
+            invalidEmail.style.display = "none";
         }
 
         if (validationCustomUsername.value === '') {
             validationCustomUsername.classList.add("invalid");
             camposCompletos = false;
+            invalidPass.style.display = "block";
+        }
+
+        if (!(validationCustomUsername.value === '')) {
+            invalidPass.style.display = "none";
         }
 
         if (camposCompletos) {
 
-
             localStorage.setItem("User-Logged", JSON.stringify({ email: inputEmail.value }));
+            window.location = "cover.html";
 
         }
     })

@@ -1,6 +1,7 @@
 var productsArray = [];
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
+const ORDER_BY_PROD_COUNT = "Relevancia";
 var minCount = undefined;
 var maxCount = undefined;
 var currentProductsArray = [];
@@ -20,6 +21,16 @@ function sortProducts(criteria, array) {
             if (a.name < b.name) { return 1; }
             return 0;
         });
+    } else if (criteria === ORDER_BY_PROD_COUNT) {
+        result = array.sort(function(a, b) {
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
+
+            if (aCount > bCount) { return -1; }
+            if (aCount < bCount) { return 1; }
+            return 0;
+        });
+
     }
     return result;
 }
@@ -87,6 +98,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     document.getElementById("sortDesc").addEventListener("click", function() {
         sortAndShowProducts(ORDER_DESC_BY_NAME);
+    });
+
+    document.getElementById("sortByCount").addEventListener("click", function() {
+        sortAndShowCategories(ORDER_BY_PROD_COUNT);
     });
 
     document.getElementById("clearRangeFilter").addEventListener("click", function() {

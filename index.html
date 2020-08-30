@@ -21,40 +21,35 @@
 </head>
 
 <body class="text-center">
-    <form class="form-signin needs-validation" action="cover.html" novalidate>
-        <div>
-            <img class="mb-4" src="img/login.png" alt="" width="100%" />
-            <h1 class="h3 mb-3 font-weight-normal">Por favor, ingrese</h1>
-            <label for="inputEmail" class="sr-only">Email</label>
-            <div class="input-group">
-                <input type="email" id="inputEmail" class="form-control" title="Ingrese su dirección de correo electrónico" placeholder="Email" required autofocus oninvalid="this.setCustomValidity('Por favor ingrese un Email válido')" oninput="setCustomValidity('')"
-                />
-                <div class="invalid-feedback">
-                    Por favor ingrese su dirección de email.
-                </div>
+    <div class="loginInput">
+        <img class="mb-4" src="img/login.png" alt="" width="100%" />
+        <h1 class="h3 mb-3 font-weight-normal">Por favor, ingrese</h1>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <div class="input-group">
+            <input type="text" id="inputEmail" class="form-control" title="Ingrese su nombre de usuario" placeholder="Usuario" required autofocus oninvalid="this.setCustomValidity('Por favor ingrese un usuario válido')" oninput="setCustomValidity('')" />
+            <div class="invalid-email" id="invalidEmail">
+                Por favor ingrese su nombre de usuario.
             </div>
-            <label for="validationCustomUsername" class="sr-only">Contraseña</label>
-            <div class="input-group">
-                <input type="password" id="validationCustomUsername" title="Ingrese su contraseña" class="form-control" placeholder="Contraseña" required/>
-
-                <div class="invalid-feedback">
-                    Por favor ingrese su contraseña.
-                </div>
-            </div>
-            <div class="checkbox mb-3">
-                <label>
+        </div>
+        <label for="validationCustomUsername" class="sr-only">Contraseña</label>
+        <div class="input-group">
+            <input type="password" id="validationCustomUsername" title="Ingrese su contraseña" class="form-control" placeholder="Contraseña" required/>
+        </div>
+        <div class="invalid-password" id="invalidPass">
+            Por favor ingrese su contraseña.
+        </div>
+        <div class="checkbox mb-3">
+            <label>
             <input type="checkbox" value="remember-me" /> Recordarme
           </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitBtn">
           Ingresar
         </button>
-            <div id="my-signin2" class="g-signin2" title="Ingresar con Google"></div>
+        <div id="my-signin2" class="g-signin2" title="Ingresar con Google"></div>
 
-            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
-        </div>
-
-    </form>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+    </div>
 
     <a href="#" onclick="signOut();">Sign out</a>
 
