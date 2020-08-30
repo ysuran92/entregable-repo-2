@@ -1,15 +1,18 @@
-#sortAsc {
+#sortAsc,
+#sortDesc,
+#sortByCount {
     border: 1px solid rgb(155, 155, 155);
-    border-bottom-left-radius: 0.2rem;
-    border-top-left-radius: 0.2rem;
     margin-top: 0.2rem;
 }
 
-#sortDesc {
-    border: 1px solid rgb(155, 155, 155);
+#sortAsc {
+    border-bottom-left-radius: 0.2rem;
+    border-top-left-radius: 0.2rem;
+}
+
+#sortByCount {
     border-top-right-radius: 0.2rem;
     border-bottom-right-radius: 0.2rem;
-    margin-top: 0.2rem;
 }
 
 #ordenar {
