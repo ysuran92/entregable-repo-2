@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     });
 
     document.getElementById("sortByCount").addEventListener("click", function() {
-        sortAndShowCategories(ORDER_BY_PROD_COUNT);
+        sortAndShowProducts(ORDER_BY_PROD_COUNT);
     });
 
     document.getElementById("clearRangeFilter").addEventListener("click", function() {
