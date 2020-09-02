@@ -1,6 +1,6 @@
 var productsArray = [];
-const ORDER_ASC_BY_NAME = "AZ";
-const ORDER_DESC_BY_NAME = "ZA";
+const ORDER_ASC_BY_COST = "Menor precio";
+const ORDER_DESC_BY_COST = "Mayor precio";
 const ORDER_BY_PROD_COUNT = "Relevancia";
 var minCount = undefined;
 var maxCount = undefined;
@@ -9,16 +9,16 @@ var currentSortCriteria = undefined;
 
 function sortProducts(criteria, array) {
     let result = [];
-    if (criteria === ORDER_ASC_BY_NAME) {
+    if (criteria === ORDER_ASC_BY_COST) {
         result = array.sort(function(a, b) {
-            if (a.name < b.name) { return -1; }
-            if (a.name > b.name) { return 1; }
+            if (a.cost < b.cost) { return -1; }
+            if (a.cost > b.cost) { return 1; }
             return 0;
         });
-    } else if (criteria === ORDER_DESC_BY_NAME) {
+    } else if (criteria === ORDER_DESC_BY_COST) {
         result = array.sort(function(a, b) {
-            if (a.name > b.name) { return -1; }
-            if (a.name < b.name) { return 1; }
+            if (a.cost > b.cost) { return -1; }
+            if (a.cost < b.cost) { return 1; }
             return 0;
         });
     } else if (criteria === ORDER_BY_PROD_COUNT) {
@@ -88,16 +88,16 @@ function sortAndShowProducts(sortCriteria, productsArray) {
 document.addEventListener("DOMContentLoaded", function(e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
-            sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
+            sortAndShowProducts(ORDER_ASC_BY_COST, resultObj.data);
         }
     });
 
     document.getElementById("sortAsc").addEventListener("click", function() {
-        sortAndShowProducts(ORDER_ASC_BY_NAME);
+        sortAndShowProducts(ORDER_ASC_BY_COST);
     });
 
     document.getElementById("sortDesc").addEventListener("click", function() {
-        sortAndShowProducts(ORDER_DESC_BY_NAME);
+        sortAndShowProducts(ORDER_DESC_BY_COST);
     });
 
     document.getElementById("sortByCount").addEventListener("click", function() {
