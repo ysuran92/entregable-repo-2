@@ -31,24 +31,21 @@
             </div>
         </div>
     </nav>
-    <div class="row justify-content-end">
-        <div class="col-md-6"></div>
-        <div class="col-md-6 col-sm-12 mb-1 container">
-            <div class="row container p-0 m-0">
-                <div class="row">
-                    <div class="col text-right">
-                        <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                            <p id="ordenar">Ordenar</p>
-                            <label class="btn btn-light active" id="sortAsc">
+    <div class="row justify-content-end mb-1">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                        <p id="ordenar">Ordenar</p>
+                        <label class="btn btn-light active" id="sortAsc">
                                 <input type="radio" name="options" autocomplete="off" checked>Menor precio
                             </label>
-                            <label class="btn btn-light" id="sortDesc">
+                        <label class="btn btn-light" id="sortDesc">
                                 <input type="radio" name="options" autocomplete="off">Mayor precio
                             </label>
-                            <label class="btn btn-light" id="sortByCount">
+                        <label class="btn btn-light" id="sortByCount">
                                 <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
                             </label>
-                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -60,7 +57,7 @@
                 <div class="col" id="maxInput">
                     <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
                 </div>
-                <div class="col-3 p-0">
+                <div class="col">
                     <div class="btn-group" role="group">
                         <button class="btn btn-light" id="rangeFilterCount">Filtrar</button>
                         <button class="btn btn-light" id="clearRangeFilter">Limpiar</button>

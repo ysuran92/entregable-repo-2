@@ -35,10 +35,13 @@
 #rangeFilterCountMax,
 #rangeFilterCountMin {
     border: 1px solid rgb(155, 155, 155);
+    width: 150px;
+    position: relative;
 }
 
 #rangeFilterCount,
 #clearRangeFilter {
+    position: relative;
     margin-top: 0.5rem;
     padding-top: 3px;
     border: 1px solid rgb(233, 233, 233);
