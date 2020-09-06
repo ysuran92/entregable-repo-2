@@ -35,6 +35,10 @@ function sortProducts(criteria, array) {
     return result;
 }
 
+function verProducto(name) {
+    localStorage.setItem("product", JSON.stringify({ productid: name }));
+    window.location = "product-info.html"
+}
 
 function showProductsList(array) {
 
@@ -52,6 +56,7 @@ function showProductsList(array) {
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
+                <button class="btn btn-secondary ver" style="float: right;">Ver producto</button>
                     <div class="d-flex w-100 justify-content-between">
                     <div class="mb-1">
                         <h4>` + product.name + ` - USD ` + product.cost + `</h4>
@@ -64,10 +69,22 @@ function showProductsList(array) {
         </div>
         `
 
+
+
             document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
+
+            let ver = document.getElementsByClassName("ver")
+
+            for (let x = 0; x < ver.length; x++) {
+                ver[x].addEventListener('click', function() {
+                    verProducto(product.name);
+                });
+            }
+
         }
     }
 };
+
 
 function sortAndShowProducts(sortCriteria, productsArray) {
     currentSortCriteria = sortCriteria;
