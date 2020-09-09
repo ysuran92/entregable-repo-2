@@ -1,10 +1,13 @@
-.commentArea {
-    text-align: center;
+#productName {
+    padding-top: 2rem;
 }
 
-.commentArea h4 {
-    position: relative;
-    left: -3.5rem;
+#comentarios {
+    padding-top: 2rem;
+}
+
+.commentArea {
+    text-align: left;
 }
 
 .rating_stars {
@@ -44,51 +47,36 @@
     left: 0;
 }
 
-.rating_stars span.r.r0_5 {
-    left: 0px;
-}
-
 .rating_stars span.r.r1 {
     left: 10px;
-    width: 11px;
-}
-
-.rating_stars span.r.r1_5 {
-    left: 21px;
-    width: 13px;
+    width: 25px;
 }
 
 .rating_stars span.r.r2 {
     left: 34px;
-    width: 12px;
-}
-
-.rating_stars span.r.r2_5 {
-    left: 46px;
-    width: 12px;
+    width: 25px;
 }
 
 .rating_stars span.r.r3 {
     left: 58px;
-    width: 11px;
-}
-
-.rating_stars span.r.r3_5 {
-    left: 69px;
-    width: 12px;
+    width: 25px;
 }
 
 .rating_stars span.r.r4 {
     left: 81px;
-    width: 12px;
-}
-
-.rating_stars span.r.r4_5 {
-    left: 93px;
-    width: 12px;
+    width: 25px;
 }
 
 .rating_stars span.r.r5 {
     left: 105px;
-    width: 12px;
+    width: 25px;
+}
+
+.values {
+    display: none;
+}
+
+#commentBox {
+    width: 50rem;
+    height: 10rem;
 }
