@@ -1,4 +1,5 @@
-var product = {};
+let product = {};
+let comentariosArray = {};
 
 function showImagesGallery(array) {
 
@@ -20,24 +21,23 @@ function showImagesGallery(array) {
 }
 
 function showComments(arrayComments) {
-    let verLibro = JSON.parse(localStorage.getItem("libro"));
-    for (let i = 0; i < librosArray.length; i++) {
-        let comments = "<hr>";
-
-
-
-        for (let comment in arrayComments) {
-            if (arrayComments[comment].id_libro == verLibro.libroid) {
-                comments += "<strong>" + arrayComments[comment].usuario + "</strong> dice: <br>";
-                comments += "<p>" + arrayComments[comment].comentario + "</p><br>";
-                comments += "Calificación: <strong>" + arrayComments[comment].calificacion + "</strong><br>";
-                comments += "<br><hr>"
-            }
+    let comments = "";
+    arrayComments.forEach(function(comment) {
+        let score = "";
+        comments += `
+        <strong>${comment.user}</strong> dice:<br>
+        <p> ${comment.description} </p>
+        `;
+        for (let i = 1; i <= comment.score; i++) {
+            score += ` <span class="fa fa-star checked"></span> `;
         }
-
-
-        document.getElementById("comentarios").innerHTML = comments;
-    }
+        for (let i = comment.score; i < 5; i++) {
+            score += ` <span class="fa fa-star"></span> `;
+        }
+        comments += ` <div style="text-align: right;"> ${score} </div> `;
+    })
+    let commentsHTML = document.getElementById("comentarios");
+    commentsHTML.innerHTML = comments;
 }
 
 
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
             comentariosArray = resultObj.data;
+            showComments(comentariosArray);
         }
     });
 });
