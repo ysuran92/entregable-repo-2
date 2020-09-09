@@ -80,6 +80,12 @@ jQuery(document).ready(function($) {
 
 ///////////////////// STAR RATING END
 
+// HIDE COMMENT BOX WHEN NOT LOGGED IN
+let contraUser = localStorage.getItem("User-Logged");
+if (contraUser) {
+    document.getElementById("commentContainer").style = "display: flex;";
+}
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -109,4 +115,18 @@ document.addEventListener("DOMContentLoaded", function(e) {
             showComments(comentariosArray);
         }
     });
+});
+
+document.getElementById("sendComment").addEventListener("click", function() {
+    let fecha = new Date();
+    let dateTime = ` ${fecha.getFullYear()}-${fecha.getMonth() + 1}-${fecha.getDate()} `;
+    dateTime += ` ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()} `;
+    let newComment = {
+        score: parseInt(document.getElementById("rating").value),
+        description: document.getElementById("commentBox").value,
+        user: JSON.parse(localStorage.getItem("User-Logged")).email,
+        dateTime: dateTime
+    };
+    comentariosArray.push(newComment);
+    showComments(comentariosArray);
 });
