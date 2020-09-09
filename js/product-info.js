@@ -34,6 +34,9 @@ function showComments(arrayComments) {
         for (let i = comment.score; i < 5; i++) {
             score += ` <span class="fa fa-star"></span> `;
         }
+
+        comments += ` <sub> ${comment.dateTime} </sub> <br> `
+
         comments += ` <div style="text-align: right;"> ${score} </div> `;
     })
     let commentsHTML = document.getElementById("comentarios");
