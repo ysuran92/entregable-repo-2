@@ -2,7 +2,8 @@
 #sortDesc,
 #sortByCount {
     border: 1px solid rgb(155, 155, 155);
-    margin-top: 0.2rem;
+    margin-top: 0.5rem;
+    padding-top: 3px;
 }
 
 #sortAsc {
@@ -22,20 +23,20 @@
 
 #minInput,
 #maxInput {
-    padding-top: 0.3rem;
+    margin-top: 0.5rem;
     padding-left: 0px;
 }
 
 #precio {
     margin: 0.5rem;
-    padding-top: 3px;
+    padding-top: 0.45rem;
     margin-right: -6px;
 }
 
 #rangeFilterCountMax,
 #rangeFilterCountMin {
     border: 1px solid rgb(155, 155, 155);
-    width: 150px;
+    width: 10rem;
     position: relative;
 }
 
@@ -44,5 +45,5 @@
     position: relative;
     margin-top: 0.5rem;
     padding-top: 3px;
-    border: 1px solid rgb(233, 233, 233);
+    border: 1px solid rgb(155, 155, 155);
 }
