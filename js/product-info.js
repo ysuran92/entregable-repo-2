@@ -81,8 +81,8 @@ jQuery(document).ready(function($) {
 ///////////////////// STAR RATING END
 
 // HIDE COMMENT BOX WHEN NOT LOGGED IN
-let contraUser = localStorage.getItem("User-Logged");
-if (contraUser) {
+let loggedInCondition = localStorage.getItem("User-Logged");
+if (loggedInCondition) {
     document.getElementById("commentContainer").style = "display: flex;";
 }
 

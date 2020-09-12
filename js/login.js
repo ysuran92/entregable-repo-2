@@ -54,13 +54,12 @@ function attachSignin(element) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {
-    document.getElementById("submitBtn").addEventListener("click", function(e) {
+    let logInAny = () => {
         let inputEmail = document.getElementById("inputEmail");
         let validationCustomUsername = document.getElementById("validationCustomUsername");
         let camposCompletos = true;
         let invalidEmail = document.getElementById("invalidEmail");
         let invalidPass = document.getElementById("invalidPass");
-
         if (inputEmail.value === '') {
             inputEmail.classList.add("invalid");
             camposCompletos = false;
@@ -80,12 +79,19 @@ document.addEventListener("DOMContentLoaded", function(e) {
         if (!(validationCustomUsername.value === '')) {
             invalidPass.style.display = "none";
         }
-
         if (camposCompletos) {
 
             localStorage.setItem("User-Logged", JSON.stringify({ email: inputEmail.value }));
             window.location = "cover.html";
 
-        }
-    })
+        };
+    };
+    document.getElementById("submitBtn").addEventListener("click", function(e) {
+        logInAny();
+    });
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            logInAny();
+        };
+    });
 });
