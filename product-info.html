@@ -13,6 +13,8 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/product-info.css">
+    <link rel="icon" href="img/circle.png">
 </head>
 
 <body>
@@ -23,16 +25,76 @@
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+            <div id="info-user" style="display: none;">
+                <p class="py-2 d-none d-md-inline-block" id="user"></p>
+                <a id="salir" class="py-2 d-none d-md-inline-block" href="index.html" onclick="signOut();">(Salir)</a>
+            </div>
         </div>
     </nav>
-    <div class="container p-5">
-        <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-            <h4 class="alert-heading">¡A trabajar! :)</h4>
-            <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-            <hr>
-            <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="container" id="contenido">
+        <h3 id="productName"></h3>
+        <hr class="my-3">
+        <dl>
+            <dt>Descripción</dt>
+            <dd>
+                <p id="productDescription"></p>
+            </dd>
+
+            <dt>Cantidad de productos vendidos</dt>
+            <dd>
+                <p id="soldCount"></p>
+            </dd>
+
+            <dt>Categoría</dt>
+            <dd>
+                <p id="productCriteria"></p>
+            </dd>
+
+            <dt>Imágenes ilustrativas</dt>
+            <dd>
+                <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+                </div>
+            </dd>
+
+            <dt>Opiniones</dt>
+            <dd>
+                <p id="comentarios"></p>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="container" id="commentContainer" style="display:none;">
+        <div class="commentArea">
+            <h4>Deje su opinión</h4>
+            <textarea id="commentBox"></textarea><br>
+            <span class="rating_stars rating_0">
+                <span class='s' data-low='0' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+            <span class='s' data-low='1' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+            <span class='s' data-low='2' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+            <span class='s' data-low='3' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+            <span class='s' data-low='4' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+
+
+            <span class='r r1' data-rating='1' data-value='1'></span>
+            <span class='r r2' data-rating='2' data-value='2'></span>
+            <span class='r r3' data-rating='3' data-value='3'></span>
+            <span class='r r4' data-rating='4' data-value='4'></span>
+            <span class='r r5' data-rating='5' data-value='5'></span>
+            </span>
+            <br>
+            <div class="values">
+                <div>
+                    <label>Rating</label><input type="text" id="rating" value="0" />
+                </div>
+                <div>
+                    <label>Rating Value</label><input type="text" name="rating" id="rating_val" value="0" />
+                </div>
+            </div>
+            <br>
+            <button id="sendComment" class="btn btn-primary" type="button">Enviar</button>
         </div>
     </div>
+
     <footer class="text-muted">
         <div class="container">
             <p class="float-right">

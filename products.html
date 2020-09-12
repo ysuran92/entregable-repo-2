@@ -13,6 +13,8 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="icon" href="img/circle.png">
 </head>
 
 <body>
@@ -23,11 +25,50 @@
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+            <div id="info-user" style="display: none;">
+                <p class="py-2 d-none d-md-inline-block" id="user"></p>
+                <a id="salir" class="py-2 d-none d-md-inline-block" href="index.html" onclick="signOut();">(Salir)</a>
+            </div>
         </div>
     </nav>
+    <div class="row justify-content-end mb-1">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                        <p id="ordenar">Ordenar</p>
+                        <label class="btn btn-light active" id="sortAsc">
+                                <input type="radio" name="options" autocomplete="off" checked>Menor precio
+                            </label>
+                        <label class="btn btn-light" id="sortDesc">
+                                <input type="radio" name="options" autocomplete="off">Mayor precio
+                            </label>
+                        <label class="btn btn-light" id="sortByCount">
+                                <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
+                            </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="font-weight-normal text-right my-2" id="precio">Precio</p>
+                </div>
+                <div class="col" id="minInput">
+                    <input class="form-control" type="number" placeholder="mín." id="rangeFilterCountMin">
+                </div>
+                <div class="col" id="maxInput">
+                    <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                </div>
+                <div class="col">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-light" id="rangeFilterCount">Filtrar</button>
+                        <button class="btn btn-light" id="clearRangeFilter">Limpiar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
-            <div class="list-group" id="cat-list-container">
+            <div class="list-group" id="prod-list-container">
             </div>
         </div>
     </div>
