@@ -1,5 +1,6 @@
 let product = {};
 let comentariosArray = {};
+let relatedProductsArray = [];
 
 function showImagesGallery(array) {
 
@@ -115,6 +116,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
             showComments(comentariosArray);
         }
     });
+    getJSONData(PRODUCTS_URL).then(function(resultObj) {
+        if (resultObj.status === "ok") {
+            relatedProductsArray = resultObj.data;
+            relatedProducts(relatedProductsArray, product.relatedProducts);
+        }
+    });
 });
 
 document.getElementById("sendComment").addEventListener("click", function() {
@@ -130,3 +137,16 @@ document.getElementById("sendComment").addEventListener("click", function() {
     comentariosArray.push(newComment);
     showComments(comentariosArray);
 });
+
+function relatedProducts(productosArray, arrayRelated) {
+    let related = '<hr>';
+
+    arrayRelated.forEach(function(i) {
+        related += '<strong>' + productosArray[i].name + ' </strong>';
+        related += productosArray[i].description + '<br>';
+        related += '<img src="' + productosArray[i].imgSrc + '">';
+        related += '<a href="product-info.html"><button class="btn btn-light" style="float: right;">Ver producto</button></a><br><br>';
+        related += '<br><hr><br>'
+    });
+    document.getElementById("relatedProducts").innerHTML = related;
+};

@@ -87,3 +87,7 @@
     display: none;
 }
 */
+
+#relatedProducts img {
+    width: 15rem;
+}
