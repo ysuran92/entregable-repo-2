@@ -46,7 +46,7 @@ var getJSONData = function(url) {
 document.addEventListener("DOMContentLoaded", function(e) {
 
     let userLogged = localStorage.getItem("User-Logged");
-    let infoUser = document.getElementById("info-user");
+    let infoUser = document.getElementById("dropdown");
     let user = document.getElementById("user");
 
     if (userLogged) {
