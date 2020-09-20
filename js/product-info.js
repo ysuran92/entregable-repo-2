@@ -5,18 +5,29 @@ let relatedProductsArray = [];
 function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
+    let htmlContentToAppend2 = "";
 
     for (let i = 0; i < array.length; i++) {
-        let imageSrc = array[i];
 
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
+        if (i == 0) {
+            htmlContentToAppend += `
+        <div class="carousel-item active">
+                            <img src="img/prod1.jpg" class="d-block w-100" alt="...">
+                        </div>
         `
+        } else {
+            htmlContentToAppend += `
+        <div class="carousel-item">
+                        <img src="` + array[i] + `" class="d-block w-100" alt="...">
+                      </div>
+        `
+        }
+        htmlContentToAppend2 += `
+        <li data-target="#carouselExampleIndicators" data-slide-to="` + [i] +
+            `"></li>
+`
 
+        document.getElementById("indicatorsID").innerHTML = htmlContentToAppend2;
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
