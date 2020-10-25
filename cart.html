@@ -54,11 +54,105 @@
         </div>
     </nav>
     <div class="container p-5">
-        <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-            <h4 class="alert-heading">¡A trabajar! :)</h4>
-            <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-            <hr>
-            <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+        <div class="text-center p-4">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Artículo</th>
+                            <th>Cantidad</th>
+                            <th>Costo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cartContainer"></tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Costo total:</td>
+                            <td id="sumaTot"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <hr>
+                <h4>Tipo de envío</h4>
+                <div>
+                    <input id="montevideo" name="envio" type="radio" value="2" checked="" required="">
+                    <label for="montevideo">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label><br>
+                    <input id="sur" name="envio" type="radio" value="4" required="">
+                    <label for="sur">Express (5-8 días) - Costo del 7% sobre el subtotal.</label><br>
+                    <input id="norte" name="envio" type="radio" value="6" required="">
+                    <label for="norte">Standard (12-15 días) - Costo del 5% sobre el subtotal.</label><br>
+                </div>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Artículo</th>
+                            <th>Costo del envío</th>
+                            <th>Costo total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="totalEnvio"></tbody>
+                </table>
+                <br>
+                <button class="btn btn-block btn-primary" data-toggle="modal" data-target="#modalPagar">
+                    Ingresar préstamo
+                </button>
+                <br><br>
+            </div>
+        </div>
+        <div class="modal fade" id="modalPagar">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ingrese sus datos</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="needs-validation" novalidate></form>
+                        <div>
+                            <h4>Datos del socio:</h4>
+                            <input type="text" class="form-control" placeholder="Nombre"><br>
+                            <input type="text" class="form-control" placeholder="Apellido"><br>
+                        </div>
+                        <div>
+                            <h4>Datos para el envío</h4>
+                            <label for="depto">Departamento</label><br>
+                            <select class="form-control" id="depto">
+                                <option>Montevideo</option>
+                                <option>Artigas</option>
+                                <option>Canelones</option>
+                                <option>Cerro Largo</option>
+                                <option>Colonia</option>
+                                <option>Durazno</option>
+                                <option>Flores</option>
+                                <option>Florida</option>
+                                <option>Lavalleja</option>
+                                <option>Maldonado</option>
+                                <option>Paysandú</option>
+                                <option>Río Negro</option>
+                                <option>Rivera</option>
+                                <option>Rocha</option>
+                                <option>Salto</option>
+                                <option>San José</option>
+                                <option>Soriano</option>
+                                <option>Tacuarembó</option>
+                                <option>Treinta y Tres</option>
+                            </select><br>
+                            <input type="text" class="form-control" placeholder="Dirección"><br>
+                        </div>
+                        <div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-block btn-success">
+                                    Confirmar préstamo
+                                </button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="spinner-wrapper">
